@@ -52,7 +52,7 @@ Firefoxはセキュリティの観点から、ローカルネットワーク内�
    ```ssh-config
    Host llm-server
      HostName ubuntupgx.local # 実際のサーバー名またはIP
-     LocalForward 8001 127.0.0.1:8001
+     LocalForward 8000 127.0.0.1:8000
    ```
 
 2. ターミナルからSSH接続してトンネルを開通させます。
@@ -73,14 +73,14 @@ Firefoxはセキュリティの観点から、ローカルネットワーク内�
 
 2. vLLMを証明書指定で起動します。
    ```bash
-   vllm serve unsloth/gemma-4-12b-it-NVFP4 --port 8001 --ssl-keyfile key.pem --ssl-certfile cert.pem
+   vllm serve unsloth/gemma-4-12b-it-NVFP4 --port 8000 --ssl-keyfile key.pem --ssl-certfile cert.pem
    ```
 
 3. 【重要】ブラウザで証明書の例外を許可する
-アドオンから通信する前に、Firefoxのアドレスバーに https://xxx.local:8001/v1/models （※ご自身のサーバー名）を入力し、「危険性を承知で続行」をクリックして証明書をブラウザに記憶させます。
+アドオンから通信する前に、Firefoxのアドレスバーに https://xxx.local:8000/v1/models （※ご自身のサーバー名）を入力し、「危険性を承知で続行」をクリックして証明書をブラウザに記憶させます。
 
 4. アドオンのオプション画面で、API URLを以下のように https で設定します。
-https://ubuntupgx.local:8001/v1/chat/completions
+https://xxx.local:8000/v1/chat/completions
 
 
 ### License
