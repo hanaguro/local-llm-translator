@@ -68,7 +68,7 @@ Firefoxはセキュリティの観点から、ローカルネットワーク内�
 
 1. LLMサーバー上で秘密鍵と証明書を生成します。
    ```bash
-   openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/CN=ubuntupgx.local"
+   openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/CN=xxx.local"
    ```
 
 2. vLLMを証明書指定で起動します。
