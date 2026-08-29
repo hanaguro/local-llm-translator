@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Local LLM Translator",
+  "version": "1.0",
+  "description": "ローカルLLMを利用してWebページを指定言語に翻訳します。",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "このページを翻訳する"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

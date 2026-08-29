@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Local LLM Translator 設定</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 500px; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+    button { margin-top: 20px; padding: 10px 20px; cursor: pointer; }
+    #status { margin-top: 10px; color: green; }
+  </style>
+</head>
+<body>
+  <h2>翻訳設定</h2>
+  
+  <label for="targetLang">翻訳先言語</label>
+  <input type="text" id="targetLang" placeholder="例: 日本語">
+
+  <label for="apiUrl">ローカルLLM API URL (v1/chat/completions)</label>
+  <input type="text" id="apiUrl" placeholder="http://127.0.0.1:8000/v1/chat/completions">
+
+  <label for="modelName">モデル名</label>
+  <input type="text" id="modelName" placeholder="unsloth/gemma-4-12b-it-NVFP4">
+
+  <button id="saveBtn">保存</button>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
